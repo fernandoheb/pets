@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Soma</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <script src="/webjars/bootstrap/js/bootstrap.min.css"></script>
+</head>
+<body>
+	<main class="container mt-5">
+	<table>
+		<tr th:each="pet: ${pets}" >
+		    <td th:text="${pet.getId() }" />
+		    <td th:text="${pet.getNome()}" />
+ 		    <td th:text="${pet.getRaca()}" />
+		    <td th:text="${pet.getEspecie()}" />
+		    <td> <a th:class="'btn btn-info'" th:href="'p/'+${pet.getId()}" th:text="'atualizar'"/></td>  
+		    <td> <a th:class="'btn btn-danger'" th:href="'kill/'+${pet.getId()}" th:text="'apagar'"/></td>   
+		</tr>  
+	</table>
+    <a class=" btn btn-secondary" href="http://localhost:8080/"> voltar</a>
+    </main>
+</body>
+</html>
