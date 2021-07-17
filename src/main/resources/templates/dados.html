@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Exemplo form estático</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<h1>Cadastro de Pets</h1>
+		<form  class="mt-3 mb-2" action="#" th:action="@{/pet/update}"  th:object="${pet}" method="POST"
+		modelAttribute="pet">
+			<label for="nome">Id </label>			
+			<input class="form-control" type="text"  th:field="*{id}"   	name="id" readonly> 	
+			<label for="nome">Nome </label>			
+			<input class="form-control" type="text" th:field="*{nome}" 		name="nome"/> <br>
+			<label for="especie">Espécie </label>	
+			<input class="form-control" type="text" th:field="*{especie}"   name="especie"/> <br>
+			<label for="raca">Raça </label>
+			<input class="form-control" type="text"  th:field="*{raca}"  	name="raca"> 		
+			
+							
+			<button  class="btn btn-primary mt-2" type="submit" > 
+			Atualizar Pet </button>
+			 </button>						
+		</form>
+		<a class="btn btn-info" href ="http://localhost:8080/pet/all"> Ver todos </a>
+	</div>
+
+</body>
+
+</html>
